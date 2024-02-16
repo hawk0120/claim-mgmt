@@ -23,14 +23,13 @@ public class ClaimController {
 
     @GetMapping
     public List<Claim> getAllClaims() {
-        return claimService.getAllClaims();
+      return claimService.getAllClaims();
     }
 
-    @PostMapping
+/**    @PostMapping
     public Claim createClaim(@RequestBody String description) {
-        return claimService.createClaim(description);
+	return claimService.createClaim(description);
     }
-
     @PostMapping("/{id}/resolve")
     public String resolveClaim(@PathVariable Long id) {
         if (claimService.resolveClaim(id)) {
@@ -39,4 +38,6 @@ public class ClaimController {
             return "Claim not found or already resolved.";
         }
     }
+**/
+
 }

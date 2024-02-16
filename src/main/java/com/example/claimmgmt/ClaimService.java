@@ -14,14 +14,15 @@ public class ClaimService {
     }
 
     public List<Claim> getAllClaims() {
-        return claimRepository.findClaim();
+        return claimRepository.findAllClaims();
     }
 
-    public void createClaim(String description) {
+/**    public void createClaim(String description) {
         claimRepository.createClaim(description);
     }
 
     public void resolveClaim(long id) {
         claimRepository.resolveClaim(id);
     }
+**/
 }
