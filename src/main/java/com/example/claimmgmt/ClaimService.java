@@ -13,8 +13,8 @@ public class ClaimService {
         this.claimRepository = claimRepository;
     }
 
-    public List<Claim> getAllClaims() {
-        return claimRepository.findClaim();
+    public List<Claim> findAllClaims() {
+        return claimRepository.findAllClaims();
     }
 
     public void createClaim(String description) {
@@ -23,5 +23,17 @@ public class ClaimService {
 
     public void resolveClaim(long id) {
         claimRepository.resolveClaim(id);
+    }
+
+    public List<Claim> findUnresolvedClaims() {
+        return claimRepository.findUnresolvedClaims();
+    }
+
+    public List<Claim> findResolvedClaims() {
+        return claimRepository.findResolvedClaims();
+    }
+
+    public List<Claim> getAllClaims() {
+        return claimRepository.findAllClaims();
     }
 }

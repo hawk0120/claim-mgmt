@@ -23,14 +23,24 @@ public class ClaimController {
 
     @GetMapping
     public List<Claim> getAllClaims() {
-        return claimService.getAllClaims();
+      return claimService.getAllClaims();
     }
 
-    @PostMapping
+
+    @GetMapping("/unresolved")
+    public List<Claim> getUnresolvedClaims() {
+        return claimService.getUnresolvedClaims();
+    }
+
+    @GetMapping("/resolved")
+    public List<Claim> getResolvedClaims() {
+        return claimService.getResolvedClaims();
+    }
+
+    @PostMapping("/create")
     public Claim createClaim(@RequestBody String description) {
         return claimService.createClaim(description);
     }
-
     @PostMapping("/{id}/resolve")
     public String resolveClaim(@PathVariable Long id) {
         if (claimService.resolveClaim(id)) {
@@ -39,4 +49,6 @@ public class ClaimController {
             return "Claim not found or already resolved.";
         }
     }
+
+
 }
