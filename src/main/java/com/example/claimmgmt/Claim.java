@@ -1,5 +1,6 @@
 package com.example.claimmgmt;
 
+@Entity
 public class Claim {
     private int id; 
     private String description;
